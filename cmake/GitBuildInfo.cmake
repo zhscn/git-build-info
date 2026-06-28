@@ -195,7 +195,7 @@ function(_git_build_info_generate)
   _git_build_info_capture(GIT_SHORT_COMMIT "unknown" rev-parse --short=12 HEAD)
   _git_build_info_capture(GIT_TAG "" describe --tags --exact-match)
   _git_build_info_capture(GIT_DESCRIBE "${GIT_SHORT_COMMIT}" describe --tags
-                          --always --broken)
+                          --always --broken --abbrev=12)
 
   if(GIT_BRANCH STREQUAL "")
     set(GIT_BRANCH "DETACHED")

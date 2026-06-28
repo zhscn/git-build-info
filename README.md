@@ -124,8 +124,8 @@ GitBuildInfo reads the following values during the build:
 : Exact tag for `HEAD`, or an empty string when `HEAD` is not exactly tagged.
 
 `git_describe`
-: Result of `git describe --tags --always --broken`. When the work tree is
-  dirty, `-dirty` is appended if it is not already present.
+: Result of `git describe --tags --always --broken --abbrev=12`. When the work
+  tree is dirty, `-dirty` is appended if it is not already present.
 
 `git_commit`
 : Full commit hash for `HEAD`.
@@ -148,7 +148,7 @@ include(FetchContent)
 FetchContent_Declare(
   GitBuildInfo
   GIT_REPOSITORY https://github.com/your-org/git-build-info.git
-  GIT_TAG v0.1.0)
+  GIT_TAG v0.1.1)
 FetchContent_MakeAvailable(GitBuildInfo)
 
 add_git_build_info(my_build_info)
